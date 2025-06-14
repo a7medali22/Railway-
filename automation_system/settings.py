@@ -50,7 +50,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 CORS_ALLOWED_ORIGINS = [
-    "https://railway-production-c667.up.railway.app",
+    "https://railway-production-1c96.up.railway.app/",
     "http://127.0.0.1:5173",
     "http://localhost:5173",
     "http://127.0.0.1:5500",
@@ -58,7 +58,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://railway-production-c667.up.railway.app",
+    "https://railway-production-1c96.up.railway.app/",
     "http://127.0.0.1:5173",
     "http://localhost:5173",
     "http://127.0.0.1:5500",
