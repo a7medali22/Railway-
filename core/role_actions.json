@@ -1,0 +1,69 @@
+{
+  "supermarket_manager": [
+    "root_url_is_home_supermarket",
+    "create_menu", "read_menu", "update_menu", "delete_menu",
+    "create_order", "read_order", "update_order", "delete_order",
+    "create_inventory", "read_inventory", "update_inventory", "delete_inventory",
+    "create_product", "read_product", "update_product", "delete_product",
+    "create_employee", "read_employee", "update_employee", "delete_employee",
+    "read_finance", "read_sales", "read_waiterdisplay", "read_profile", "read_about"
+  ],
+  "supermarket_cashier": [
+    "root_url_is_cashier_supermarket",
+    "read_menu", "read_order", "update_order", "read_finance", "read_sales", "read_waiterdisplay", "read_profile", "read_about"
+  ],
+  "supermarket_inventory_manager": [
+    "root_url_is_inventory_manager_supermarket",
+    "read_inventory", "update_inventory", "read_profile", "read_about"
+  ],
+  "owner": [
+    "root_url_is_home",
+    "create_menu", "read_menu", "update_menu", "delete_menu",
+    "create_order", "read_order", "update_order", "delete_order", "update_own_order",
+    "create_inventory", "read_inventory", "update_inventory", "delete_inventory",
+    "create_product", "read_product", "update_product", "delete_product",
+    "create_employee", "read_employee", "update_employee", "delete_employee",
+    "read_finance", "read_kds", "read_waiterdisplay", "read_deliverydisplay",
+    "read_profile", "read_settings", "read_about", "read_home", "read_sales"
+  ],
+  "manager": [
+    "root_url_is_home",
+    "create_menu", "read_menu", "update_menu", "delete_menu",
+    "create_order", "read_order", "update_order", "delete_order",
+    "create_inventory", "read_inventory", "update_inventory", "delete_inventory",
+    "create_product", "read_product", "update_product", "delete_product",
+    "read_finance",
+    "read_kds", "read_waiterdisplay", "read_deliverydisplay",
+    "read_profile", "read_settings", "read_about", "read_home", "read_sales"
+  ],
+  "chef": [
+    "root_url_is_kds",
+    "read_menu", "read_kds", "read_profile", "read_about"
+  ],
+  "waiter": [
+    "root_url_is_home",
+    "read_menu", "create_order", "read_order", "update_own_order", "read_waiterdisplay", "read_profile", "read_about"
+  ],
+  "cashier": [
+    "root_url_is_cashier",
+    "read_menu", "read_order", "update_order", "create_order" , "read_finance", "read_waiterdisplay", "read_deliverydisplay"  , "read_profile", "read_about"
+  ],
+  "cashier_supermarket": [
+    "root_url_is_cashier_supermarket",
+    "read_menu", "read_order", "update_order", "read_finance", "read_sales", "read_waiterdisplay", "read_profile", "read_about"
+  ],
+  "delivery_driver": [
+    "root_url_is_delivery_driver",
+    "read_order", "update_order", "read_deliverydisplay", "read_profile", "read_about"
+  ],
+  "inventory_manager": [
+    "root_url_is_inventory_manager",
+    "read_inventory", "update_inventory", "read_profile", "read_about"
+  ],
+  "head_chef": [
+    "root_url_is_head_chef",
+     "read_menu" ,  "create_menu", "update_menu", "delete_menu", "read_kds", "read_profile", "read_about" ,  "read_inventory"  
+  ]
+}
+
+
