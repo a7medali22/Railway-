@@ -12,8 +12,8 @@ if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 ALLOWED_HOSTS += ["*"]
 
-# ✅ الإضافة المطلوبة هنا
-ROOT_URLCONF = 'Automated_Sys_tmp.urls'  # استبدل "Automated_Sys_tmp" باسم مجلد المشروع إذا كان مختلف
+# ✅ تصحيح اسم المسار
+ROOT_URLCONF = 'automation_system.urls'
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -25,12 +25,12 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "drf_yasg",
-    # ضيف تطبيقاتك هنا مثل: "core", "restaurant", إلخ
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # مهم ييجي قبل CommonMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -50,13 +50,15 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 CORS_ALLOWED_ORIGINS = [
+    "https://railway-production-c667.up.railway.app",
     "http://127.0.0.1:5173",
     "http://localhost:5173",
     "http://127.0.0.1:5500",
-    "https://your-frontend.railway.app",  # استبدله بالنطاق الصحيح
+    "https://your-frontend.railway.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
+    "https://railway-production-c667.up.railway.app",
     "http://127.0.0.1:5173",
     "http://localhost:5173",
     "http://127.0.0.1:5500",
@@ -72,4 +74,19 @@ REST_FRAMEWORK = {
         "rest_framework.renderers.JSONRenderer",
         "rest_framework.renderers.BrowsableAPIRenderer",
     ],
+}
+
+# ✅ لوجنج مؤقت لو عاوز تتابع الأخطاء بسهولة
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
 }
