@@ -12,6 +12,9 @@ if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 ALLOWED_HOSTS += ["*"]
 
+# ✅ الإضافة المطلوبة هنا
+ROOT_URLCONF = 'Automated_Sys_tmp.urls'  # استبدل "Automated_Sys_tmp" باسم مجلد المشروع إذا كان مختلف
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -22,7 +25,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "drf_yasg",
-    # تطبيقاتك زي "core", "restaurant", إلخ
+    # ضيف تطبيقاتك هنا مثل: "core", "restaurant", إلخ
 ]
 
 MIDDLEWARE = [
@@ -34,7 +37,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 
 DATABASES = {
     "default": dj_database_url.config(
@@ -51,8 +53,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
     "http://localhost:5173",
     "http://127.0.0.1:5500",
-    "https://your-frontend.railway.app",  # استبدل بنطاق الـ Frontend
+    "https://your-frontend.railway.app",  # استبدله بالنطاق الصحيح
 ]
+
 CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:5173",
     "http://localhost:5173",
